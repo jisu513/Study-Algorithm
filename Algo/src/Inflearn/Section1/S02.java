@@ -2,7 +2,7 @@ package Inflearn.Section1;
 
 import java.io.*;
 
-public class S02 { //대소문자 변환
+public class S02 { //대문자 -> 소문자로 소문자 -> 대문자로 변환
 	public String solution(String str) {
 		String answer = "";
 
