@@ -29,7 +29,7 @@ public class S04 {//입력 받은 단어들 뒤집어서 출력하기
 				rt--;
 			}
 			String tmp = String.valueOf(c);
-			// valueOf() : boolean/ double/ float/ int/ char ... 객체를 String 객체러 변환!
+			// valueOf() : boolean/ double/ float/ int/ char ... 객체를 String 객체로 변환!
 			answer.add(tmp);
 		}
 		return answer;
