@@ -2,7 +2,7 @@ package Inflearn.Section1;
 
 import java.io.*;
 
-public class S09 {
+public class S09 {// 숫자만 추출
 	public int solution(String str) {
 		int answer = 0;
 

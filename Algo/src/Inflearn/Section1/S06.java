@@ -3,7 +3,7 @@ package Inflearn.Section1;
 import java.io.*;
 import java.util.*;
 
-public class S06 {//중복된 문자 제거 후 출력
+public class S06 {//중복된 문자 제거 
 	public String solution(String str) {
 		String answer = "";
 		

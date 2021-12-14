@@ -2,7 +2,7 @@ package Inflearn.Section1;
 
 import java.io.*;
 
-public class S01 {// 입력 문자 몇 개 존재하는지 출력
+public class S01 {// 문자 찾기
 
 	public int solution(String str, char c) {
 		int answer = 0;
