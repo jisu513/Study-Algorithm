@@ -19,7 +19,7 @@ public class S10 {// 가장 짧은 문자거리(문자열의 최대 길이는 100)
 			answer[i] = cnt;
 		}
 
-	    cnt = 1000;
+		cnt = 1000;
 	    
 		for (int i = s.length() - 1; i >= 0; i--) {
 			cnt++;
