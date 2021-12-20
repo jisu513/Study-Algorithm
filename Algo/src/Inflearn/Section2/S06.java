@@ -25,7 +25,7 @@ public class S06 {// 뒤집은 소수
 
 			while (tmp > 0) { // ***숫자 뒤집기***
 				int t = tmp % 10; // tmp의 나머지(마지막 자리 숫자)
-				rev = rev * 10 + t;
+				rev = rev * 10 + t; // 뒤집은 숫자
 				tmp = tmp / 10; // tmp의 몫
 			}
 			if (isPrime(rev)) {
