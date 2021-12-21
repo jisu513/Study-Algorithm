@@ -3,21 +3,28 @@ package Inflearn.Section2;
 import java.io.*;
 import java.util.*;
 
-public class S08 {
+public class S08 {// 등수구하기
 	public int[] solution(int n, int[] arr) {
 		int[] answer = new int[n];
-				
-		for(int i = 1; i<n; i++) {
-			if(arr[i] > arr[i-1]) {
-				
+
+		int cnt;
+
+		// 이중 for문 사용!
+		for (int i = 0; i < n; i++) {//기준 arr[]
+			cnt = 1;
+			for (int j = 0; j < n; j++) {//비교되는 arr[]
+				if (arr[j] > arr[i]) {
+					cnt++;
+				}
 			}
+			answer[i] = cnt;
 		}
 		return answer;
 	}
 
 	public static void main(String[] args) throws IOException {
 		S08 S = new S08();
-		
+
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = null;
 
@@ -29,7 +36,9 @@ public class S08 {
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
 
-		System.out.println(S.solution(n, arr));
+		for(int x : S.solution(n, arr)) {
+			System.out.print(x + " ");
+		}
 
 	}
 
