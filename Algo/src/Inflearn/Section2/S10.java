@@ -8,6 +8,11 @@ import java.util.StringTokenizer;
 public class S10 {//봉우리 (상하좌우보다 큰 숫자는 봉우리)
 	public int solution(int n, int[][] arr) {
 		int answer = 0;
+		//방향 배열 먼저 설정!
+		int[] dx = {-1,0,1,0};
+		int[] dy = {0,1,0,-1};
+		//*어렵네.. 다시 공부하고 풀기!
+		
 		return answer;
 	}
 	public static void main(String[] args) throws IOException {
