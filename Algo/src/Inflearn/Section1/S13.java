@@ -2,7 +2,7 @@ package Inflearn.Section1;
 
 import java.io.*;
 
-public class S03 {//문장 속에서 제일 긴 단어 찾기 (같은 길이의 단어 있는 경우 먼저 나온 단어 출력!)
+public class S13 {//문장 속에서 제일 긴 단어 찾기 (같은 길이의 단어 있는 경우 먼저 나온 단어 출력!)
 	public String solution(String str) {
 		String answer = ""; 
 		
@@ -20,7 +20,7 @@ public class S03 {//문장 속에서 제일 긴 단어 찾기 (같은 길이의 단어 있는 경우 먼
 	
 
 	public static void main(String[] args) throws IOException {
-		S03 S = new S03();
+		S13 S = new S13();
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String str = br.readLine();

@@ -3,7 +3,7 @@ package Inflearn.Section1;
 import java.io.*;
 import java.util.*;
 
-public class S05 { //특정 문자 뒤집기!(문자가 알파벳이 경우만 뒤집기!)
+public class S15 { //특정 문자 뒤집기!(문자가 알파벳이 경우만 뒤집기!)
 	public String solution(String str) {
 		String answer = "";
 
@@ -30,7 +30,7 @@ public class S05 { //특정 문자 뒤집기!(문자가 알파벳이 경우만 뒤집기!)
 	}
 
 	public static void main(String[] args) throws IOException {
-		S05 S = new S05();
+		S15 S = new S15();
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String str = br.readLine();

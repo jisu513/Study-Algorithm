@@ -3,7 +3,7 @@ package Inflearn.Section1;
 import java.io.*;
 import java.util.*;
 
-public class S04 {//입력 받은 단어들 뒤집어서 출력하기
+public class S14 {//입력 받은 단어들 뒤집어서 출력하기
 	public ArrayList<String> solution(int n, String[] str){
 		ArrayList<String> answer = new ArrayList<>();
 		
@@ -37,7 +37,7 @@ public class S04 {//입력 받은 단어들 뒤집어서 출력하기
 	}
 
 	public static void main(String[] args) throws IOException {
-		S04 S = new S04();
+		S14 S = new S14();
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());

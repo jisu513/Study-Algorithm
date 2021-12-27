@@ -2,7 +2,7 @@ package Inflearn.Section1;
 
 import java.io.*;
 
-public class S09 {// 숫자만 추출
+public class S19 {// 숫자만 추출
 	public int solution(String str) {
 		int answer = 0;
 
@@ -13,7 +13,7 @@ public class S09 {// 숫자만 추출
 	}
 
 	public static void main(String[] args) throws IOException {
-		S09 S = new S09();
+		S19 S = new S19();
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String str = br.readLine();

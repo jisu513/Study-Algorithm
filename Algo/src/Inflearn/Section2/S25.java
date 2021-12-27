@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class S05 {// 소수 갯수 구하기 (에라토스테네스 체) --> 소수가 되는 수의 배수를 지우면 남은건 소수
+public class S25 {// 소수 갯수 구하기 (에라토스테네스 체) --> 소수가 되는 수의 배수를 지우면 남은건 소수
 	public int solution(int n) {
 		int answer = 0;
 
@@ -25,7 +25,7 @@ public class S05 {// 소수 갯수 구하기 (에라토스테네스 체) --> 소수가 되는 수의 �
 	}
 
 	public static void main(String[] args) throws IOException {
-		S05 S = new S05();
+		S25 S = new S25();
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

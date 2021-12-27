@@ -3,7 +3,7 @@ package Inflearn.Section2;
 import java.io.*;
 import java.util.*;
 
-public class S09 {// 격자판 최대합
+public class S29 {// 격자판 최대합
 	public int solution(int n, int[][] arr) {
 		int answer = 0;
 
@@ -30,7 +30,7 @@ public class S09 {// 격자판 최대합
 	}
 
 	public static void main(String[] args) throws IOException {
-		S09 S = new S09();
+		S29 S = new S29();
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = null;

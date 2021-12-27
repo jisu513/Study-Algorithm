@@ -3,7 +3,7 @@ package Inflearn.Section2;
 import java.io.*;
 import java.util.*;
 
-public class S03 { // 가위바위보 (가위:1 바위:2 보:3)
+public class S23 { // 가위바위보 (가위:1 바위:2 보:3)
 	public String solution(int n, int[] A, int[] B) {
 		String answer = "";
 
@@ -25,7 +25,7 @@ public class S03 { // 가위바위보 (가위:1 바위:2 보:3)
 	}
 
 	public static void main(String[] args) throws IOException {
-		S03 S = new S03();
+		S23 S = new S23();
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

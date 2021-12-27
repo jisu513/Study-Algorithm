@@ -3,7 +3,7 @@ package Inflearn.Section2;
 import java.io.*;
 
 
-public class S04_1 {// 피보나치 수열
+public class S24_1 {// 피보나치 수열
 	public int[] solution(int n) {
 		int[] answer = new int[n];
 		
@@ -18,7 +18,7 @@ public class S04_1 {// 피보나치 수열
 	}
 
 	public static void main(String[] args) throws IOException {
-		S04_1 S = new S04_1();
+		S24_1 S = new S24_1();
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		

@@ -3,7 +3,7 @@ package Inflearn.Section2;
 import java.io.*;
 import java.util.*;
 
-public class S06 {// 뒤집은 소수
+public class S26 {// 뒤집은 소수
 	public boolean isPrime(int n) {//소수인지 판별!
 		if (n == 1) {
 			return false;
@@ -38,7 +38,7 @@ public class S06 {// 뒤집은 소수
 	}
 
 	public static void main(String[] args) throws IOException {
-		S06 S = new S06();
+		S26 S = new S26();
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		

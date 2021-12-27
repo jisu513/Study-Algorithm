@@ -3,7 +3,7 @@ package Inflearn.Section1;
 import java.io.*;
 import java.util.*;
 
-public class S06 {//중복된 문자 제거 
+public class S16 {//중복된 문자 제거 
 	public String solution(String str) {
 		String answer = "";
 		
@@ -21,7 +21,7 @@ public class S06 {//중복된 문자 제거
 	}
 
 	public static void main(String[] args) throws IOException {
-		S06 S = new S06();
+		S16 S = new S16();
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String str = br.readLine();

@@ -2,7 +2,7 @@ package Inflearn.Section1;
 
 import java.io.*;
 
-public class S08 {// 팰린드롬 : 앞에서 읽을 때와 뒤에서 읽을 때의 문자열이 같은 것을 의미!
+public class S18 {// 팰린드롬 : 앞에서 읽을 때와 뒤에서 읽을 때의 문자열이 같은 것을 의미!
 	public String solution(String str) {
 		String answer = "NO";
 
@@ -27,7 +27,7 @@ public class S08 {// 팰린드롬 : 앞에서 읽을 때와 뒤에서 읽을 때의 문자열이 같은 
 	}
 
 	public static void main(String[] args) throws IOException {
-		S08 S = new S08();
+		S18 S = new S18();
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String str = br.readLine();

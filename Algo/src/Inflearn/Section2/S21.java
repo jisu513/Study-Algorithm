@@ -3,7 +3,7 @@ package Inflearn.Section2;
 import java.io.*;
 import java.util.*;
 
-public class S01 {//큰 수 출력하기 (자신의 바로 앞 숫자보다 큰 숫자만)
+public class S21 {//큰 수 출력하기 (자신의 바로 앞 숫자보다 큰 숫자만)
 	public ArrayList<Integer> solution(int n, int[] num) {
 		ArrayList<Integer> answer = new ArrayList<>();
 		
@@ -19,7 +19,7 @@ public class S01 {//큰 수 출력하기 (자신의 바로 앞 숫자보다 큰 숫자만)
 	}
 
 	public static void main(String[] args) throws IOException {
-		S01 S = new S01();
+		S21 S = new S21();
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		

@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class S04_2 {// 피보나치 수열
+public class S24_2 {// 피보나치 수열
 	public void solution(int n) { //return값 없으므로 void 사용!
 		// 배열을 사용하지 않을 경우
 
@@ -21,7 +21,7 @@ public class S04_2 {// 피보나치 수열
 	}
 
 	public static void main(String[] args) throws IOException {
-		S04_2 S = new S04_2();
+		S24_2 S = new S24_2();
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

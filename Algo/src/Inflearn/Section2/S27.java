@@ -3,27 +3,24 @@ package Inflearn.Section2;
 import java.io.*;
 import java.util.*;
 
-public class S08 {// 등수구하기
-	public int[] solution(int n, int[] arr) {
-		int[] answer = new int[n];
+public class S27 {// 점수계산
+	public int solution(int n, int[] arr) {
+		int answer = 0;
 
-		int cnt;
-
-		// 이중 for문 사용!
-		for (int i = 0; i < n; i++) {//기준 arr[]
-			cnt = 1;
-			for (int j = 0; j < n; j++) {//비교되는 arr[]
-				if (arr[j] > arr[i]) {
-					cnt++;
-				}
+		int cnt = 0;
+		for (int i = 0; i < n; i++) {
+			cnt++;
+			if (arr[i] == 0) {
+				cnt = 0;
 			}
-			answer[i] = cnt;
+			answer += cnt;
 		}
+
 		return answer;
 	}
 
 	public static void main(String[] args) throws IOException {
-		S08 S = new S08();
+		S27 S = new S27();
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = null;
@@ -36,10 +33,7 @@ public class S08 {// 등수구하기
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
 
-		for(int x : S.solution(n, arr)) {
-			System.out.print(x + " ");
-		}
-
+		System.out.println(S.solution(n, arr));
 	}
 
 }

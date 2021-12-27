@@ -3,7 +3,7 @@ package Inflearn.Section1;
 import java.io.*;
 import java.util.*;
 
-public class S07 {// 입력된 문자를 앞에서 읽을 때와 뒤에서 읽을 때의 문자열이 같은경우
+public class S17 {// 입력된 문자를 앞에서 읽을 때와 뒤에서 읽을 때의 문자열이 같은경우
 	public String solution(String str) {
 		String answer = "YES";
 
@@ -38,7 +38,7 @@ public class S07 {// 입력된 문자를 앞에서 읽을 때와 뒤에서 읽을 때의 문자열이 같
 	}
 
 	public static void main(String[] args) throws IOException {
-		S07 S = new S07();
+		S17 S = new S17();
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String str = br.readLine();

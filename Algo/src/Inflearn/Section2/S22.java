@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 
-public class S02 {// 보이는 학생
+public class S22 {// 보이는 학생
 	public int solution(int n, int[] arr) {
 		int answer = 1; // 맨 앞에 학생은 무조건 보이므로 1부터 시작!
 		
@@ -20,7 +20,7 @@ public class S02 {// 보이는 학생
 	}
 
 	public static void main(String[] args) throws IOException {
-		S02 S = new S02();
+		S22 S = new S22();
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = null;
