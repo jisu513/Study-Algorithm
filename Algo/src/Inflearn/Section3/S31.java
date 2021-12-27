@@ -3,7 +3,7 @@ package Inflearn.Section3;
 import java.io.*;
 import java.util.*;
 
-public class S01 {//두 배열 합치기(two pointers algorithm)
+public class S31 {//두 배열 합치기(two pointers algorithm)
 	public ArrayList<Integer> solution(int n, int m, int[] narr, int[] marr){
 		ArrayList<Integer> answer = new ArrayList<>();
 		
@@ -35,7 +35,7 @@ public class S01 {//두 배열 합치기(two pointers algorithm)
 	}
 
 	public static void main(String[] args) throws IOException {
-		S01 S = new S01();
+		S31 S = new S31();
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = null;
