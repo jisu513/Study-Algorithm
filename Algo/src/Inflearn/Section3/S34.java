@@ -9,21 +9,22 @@ public class S34 {// 연속 부분수열(합이 특정숫자 m이 되는 갯수)
 	public int solution(int n, int m, int[] arr) {
 		int answer = 0;
 
-		int lt = 0, sum = 0;
+		int sum = 0, lt = 0;
 		for (int rt = 0; rt < n; rt++) {
 			sum += arr[rt];
 			if (sum == m) {
 				answer++;
 			}
-			while (sum >= m) {
+			while (sum >= m) {//**sum이 m일때도 while문 돌아야함!
 				sum -= arr[lt];
-				if (sum == m) {
+				lt++;
+				if (sum == m) {//**sum > m일 때 arr[lt]를 뺀 값이 m일 되는 경우도 있음!
 					answer++;
 				}
-				lt++;
 			}
 
 		}
+
 		return answer;
 	}
 
