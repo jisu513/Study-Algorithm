@@ -13,7 +13,7 @@ public class S36 {// 최대길이 연속부분수열
 				cnt++;
 			}
 			while (cnt > k) {
-				if (arr[lt] == 0) { // arr[lt]의 값이 0이면 cnt값 하나 빼줌!(cnt > k 라고 무조건 하나 빼는거 아님!)
+				if (arr[lt] == 0) {// arr[lt]의 값이 0이면 cnt값 하나 빼줌!(cnt > k 라고 무조건 하나 빼는거 아님!)
 					cnt--;
 				}
 				lt++;
@@ -21,6 +21,7 @@ public class S36 {// 최대길이 연속부분수열
 			len = rt - lt + 1;
 			answer = Math.max(answer, len);
 		}
+
 		return answer;
 	}
 
