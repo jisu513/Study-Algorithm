@@ -8,26 +8,27 @@ import java.util.StringTokenizer;
 public class S210 {// 봉우리 (상하좌우보다 큰 숫자는 봉우리) 2-10번
 	public int solution(int n, int[][] arr) {
 		int answer = 0;
-		// 방향 배열 먼저 설정!(상하좌우 비교 -> k for문)
+		// 방향배열 먼저 설정!
 		int[] dx = { -1, 0, 1, 0 };
 		int[] dy = { 0, 1, 0, -1 };
 
-		for (int i = 0; i < n; i++) {// arr의 행
-			for (int j = 0; j < n; j++) {// arr의 열
-				boolean flag = true; // 봉우리인지 아닌지 판별
-				for (int k = 0; k < 4; k++) {// 상하좌우 비교!(방향배열)
-					int nx = i + dx[k]; // 상하좌우의 행 좌표
-					int ny = i + dy[k]; // 상하좌우의 열 좌표
+		// 3중 for문 사용
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				boolean flag = true; // 봉우리 인지 아닌지 판별
+				for (int k = 0; k < 4; k++) {// 상하좌우 좌표 값 구하기!
+					int nx = i + dx[k]; //상하좌우 좌표의 행 값
+					int ny = j + dy[k]; //상하좌우 좌표의 열 값
 					if (nx >= 0 && nx < n && ny >= 0 && ny < n && arr[nx][ny] >= arr[i][j]) {
-						// nx와 ny의 범위 지정 안해주면 outOfIndex~ 오류 남! (***nx와 ny의 범위 지정을 arr[i][j]의 상하좌우 크기
-						// 비교보다 먼저 해줘야함!)
+						//nx와 ny의 경계 범위 먼저 정해줘야함! -> 안해주면 outOfIndex~ 오류남
 						flag = false;
-						break; // 상하좌우(arr[nx][ny]) 중 하나라도 arr[i][j] 보다 크면 중단!
-					} // nx>=0 과 ny>=0 을 해줌으로써 arr을 0으로 둘러쌓는 것 해결
-				} 
+						break; // arr[i][j]의 상하좌우(arr[nx][ny]) 중 하나라도 크기가 크거나 같으면 중단 -> 봉우리 아님!
+					}
+				}
 				if (flag) {
 					answer++;
 				}
+
 			}
 		}
 
