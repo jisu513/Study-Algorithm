@@ -15,14 +15,14 @@ public class S210 {// 봉우리 (상하좌우보다 큰 숫자는 봉우리) 2-10번
 		// 3중 for문 사용
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
-				boolean flag = true; // 봉우리 인지 아닌지 판별
-				for (int k = 0; k < 4; k++) {// 상하좌우 좌표 값 구하기!
+				boolean flag = true;// 봉우리 인지 아닌지 판별
+				for (int k = 0; k < 4; k++) {// 상하좌우 4개 비교!
 					int nx = i + dx[k]; //상하좌우 좌표의 행 값
 					int ny = j + dy[k]; //상하좌우 좌표의 열 값
-					if (nx >= 0 && nx < n && ny >= 0 && ny < n && arr[nx][ny] >= arr[i][j]) {
+					if (nx >= 0 && nx < n && ny >= 0 && ny < n && arr[nx][ny] > arr[i][j]) {
 						//nx와 ny의 경계 범위 먼저 정해줘야함! -> 안해주면 outOfIndex~ 오류남
 						flag = false;
-						break; // arr[i][j]의 상하좌우(arr[nx][ny]) 중 하나라도 크기가 크거나 같으면 중단 -> 봉우리 아님!
+						break;// arr[i][j]의 상하좌우(arr[nx][ny]) 중 하나라도 크기가 크거나 같으면 중단 -> 봉우리 아님!
 					}
 				}
 				if (flag) {
