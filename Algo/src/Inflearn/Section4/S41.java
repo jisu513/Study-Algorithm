@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
-public class S41 {// 학급회장(해쉬)
+public class S41 {// 학급회장(해쉬) 깃허브 오류
 	public char solution(int n, String str) {
 		char answer = ' ';
 		
@@ -14,7 +14,7 @@ public class S41 {// 학급회장(해쉬)
 			hs.put(x, hs.getOrDefault(x, 0) + 1);
 			// **getOrDefault(key,#) : 키값이 있으면 가져오고 없으면 # 리턴하는 메소드 
 			//   -> Hashmap에서 카운팅 할 때 많이 사용!
-		}
+		} 
 
 		int max = 0;
 		for (char key : hs.keySet()) {// keySet(): map에 존재하는 모든 키를 가져오는 메소드 
