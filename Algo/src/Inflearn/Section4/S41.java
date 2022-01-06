@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class S41 {// 학급회장(해쉬)
 	public char solution(int n, String str) {
 		char answer = ' ';
-
+		
 		HashMap<Character, Integer> hs = new HashMap<>();
 		for (char x : str.toCharArray()) {
 			hs.put(x, hs.getOrDefault(x, 0) + 1);
@@ -23,6 +23,7 @@ public class S41 {// 학급회장(해쉬)
 				answer = key;
 			}
 		}
+		
 		return answer;
 	}
 
