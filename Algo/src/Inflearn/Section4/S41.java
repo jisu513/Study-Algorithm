@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
-public class S41 {// 학급회장(해쉬) 깃허브 오류
+public class S41 {// 학급회장(해쉬) 깃허브 연동오류 확인
 	public char solution(int n, String str) {
 		char answer = ' ';
 		
