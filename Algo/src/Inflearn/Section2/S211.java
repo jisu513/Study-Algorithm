@@ -15,12 +15,13 @@ public class S211 {// 임시 반장 정하기
 				for (int k = 1; k < 6; k++) {// 학년(5학년까지만)
 					if (arr[i][k] == arr[j][k]) {
 						cnt++;
-						break; // 한 번이라도 같은 반이었던 사람 count(여러번 같은 반이었더라고 한번만!)
+						break;
+						// 한 번이라도 같은 반이었던 사람 count(여러번 같은 반이었더라고 한번만!)
 					}
 				}
 				if (cnt > max) {
 					max = cnt;
-					answer = i; // 최대값을 만드는 i번 학생이 답
+					answer = i;// 최대값을 만드는 i번 학생이 답
 				}
 			}
 		}
