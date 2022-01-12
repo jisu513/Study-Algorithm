@@ -8,22 +8,22 @@ import java.util.HashMap;
 public class S41 {// 학급회장(해쉬) 깃허브 연동오류 확인
 	public char solution(int n, String str) {
 		char answer = ' ';
-		
-		HashMap<Character, Integer> hs = new HashMap<>();
+
+		HashMap<Character, Integer> hm = new HashMap<>();
 		for (char x : str.toCharArray()) {
-			hs.put(x, hs.getOrDefault(x, 0) + 1);
+			hm.put(x, hm.getOrDefault(x, 0) + 1);
 			// **getOrDefault(key,#) : 키값이 있으면 가져오고 없으면 # 리턴하는 메소드 
-			//   -> Hashmap에서 카운팅 할 때 많이 사용!
-		} 
+			//              -> Hashmap에서 카운팅 할 때 많이 사용!
+		}
 
 		int max = 0;
-		for (char key : hs.keySet()) {// keySet(): map에 존재하는 모든 키를 가져오는 메소드 
-			if (hs.get(key) > max) {
-				max = hs.get(key);
+		for (char key : hm.keySet()) { // keySet(): map에 존재하는 모든 키를 가져오는 메소드
+			if (hm.get(key) > max) {
+				max = hm.get(key);
 				answer = key;
 			}
 		}
-		
+
 		return answer;
 	}
 
