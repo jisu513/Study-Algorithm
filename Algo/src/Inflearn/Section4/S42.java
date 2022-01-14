@@ -16,9 +16,11 @@ public class S42 {// 아나그램(해쉬)
 
 		for (char x : str.toCharArray()) {
 			if (!hs.containsKey(x) || hs.get(x) == 0) {
+				// containsKey(): key존재의 유무를 알아보는 메소드
 				return "NO";
 			}
 			hs.put(x, hs.get(x) - 1);
+			//s 와 str의 해당 알파벳 갯수가 같은지 확인할 수 있음 (-> key 값)
 		}
 		return answer;
 	}
