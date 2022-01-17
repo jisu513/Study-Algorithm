@@ -8,30 +8,7 @@ import java.util.StringTokenizer;
 public class S222 {//멘토링
 	public int solution(int n, int m, int[][] arr) {
 		int answer=0;
-		//2-10 ~ 2-12 다시 공부하기..!
-		for (int i = 1; i <= n; i++) { // 학생수
-			for (int j = 1; j <= n; j++) {
-				int cnt = 0;
-				for (int k = 0; k < m; k++) {// 테스트 수
-					int pi = 0, pj = 0;
-					for (int s = 0; s < n; s++) { // (i,j) 등수 비교
-						if (arr[k][s] == i) {
-							pi = s;
-						}
-						if (arr[k][s] == j) {
-							pj = s;
-						}
-					}
-					if (pi < pj) {
-						cnt++;
-					}
-				}
-				if (cnt == m) {
-					answer++;
-				}
-			}
-
-		}
+		
 		return answer;
 	}
 
