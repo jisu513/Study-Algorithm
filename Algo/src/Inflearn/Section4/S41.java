@@ -12,18 +12,19 @@ public class S41 {// 학급회장(해쉬) 깃허브 연동오류 확인
 		HashMap<Character, Integer> hm = new HashMap<>();
 		for (char x : str.toCharArray()) {
 			hm.put(x, hm.getOrDefault(x, 0) + 1);
-			// **getOrDefault(key,#) : 키값이 있으면 가져오고 없으면 # 리턴하는 메소드 
-			//              -> Hashmap에서 카운팅 할 때 많이 사용!
+			// hm.getOrDefault(x, 0)+1 : (x라는 값이 존재하면 x의 값을 넣어주고 없다면 0)을 한 후 +1
+			// --> key의 개수를 셀 때 사용!
 		}
-
-		int max = 0;
-		for (char key : hm.keySet()) { // keySet(): map에 존재하는 모든 키를 가져오는 메소드
-			if (hm.get(key) > max) {
+		int max = Integer.MIN_VALUE;
+		for (char key : hm.keySet()) {
+			// keySet(): map의 전체의 key 값을 출력하고 싶을 때 사용!
+			if (max < hm.get(key)) {
+				// get(): 특정 key값의 value를 가져올 때 사용! (이 문제에서는 key값의 개수가 들어있음!)
 				max = hm.get(key);
 				answer = key;
 			}
 		}
-
+ 
 		return answer;
 	}
 
