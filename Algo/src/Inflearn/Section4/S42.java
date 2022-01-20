@@ -8,19 +8,18 @@ import java.util.HashMap;
 public class S42 {// 아나그램(해쉬)
 	public String solution(String s, String str) {
 		String answer = "YES";
-		HashMap<Character, Integer> hs = new HashMap<>();
+
+		HashMap<Character, Integer> hm = new HashMap<>();
 
 		for (char x : s.toCharArray()) {
-			hs.put(x, hs.getOrDefault(x, 0) + 1);
+			hm.put(x, hm.getOrDefault(x, 0) + 1);
 		}
-
 		for (char x : str.toCharArray()) {
-			if (!hs.containsKey(x) || hs.get(x) == 0) {
-				// containsKey(): key존재의 유무를 알아보는 메소드
-				return "NO";
+			if (!hm.containsKey(x) || hm.get(x) == 0) {
+				//containsKey() : 특정 key 존재 여부를 확인할 때 사용!
+				answer = "NO";
 			}
-			hs.put(x, hs.get(x) - 1);
-			//s 와 str의 해당 알파벳 갯수가 같은지 확인할 수 있음 (-> key 값)
+			hm.put(x, hm.get(x) - 1);
 		}
 		return answer;
 	}
