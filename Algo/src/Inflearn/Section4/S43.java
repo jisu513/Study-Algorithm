@@ -12,15 +12,15 @@ public class S43 {// 매출액의 종류 (HashMap + SlidingDoor)
 			hm.put(arr[i], hm.getOrDefault(arr[i], 0) + 1);
 		}
 		int lt = 0;
-		for (int rt = k-1; rt < n; rt++) {
-			hm.put(arr[rt], hm.getOrDefault(arr[rt], 0) + 1); //arr[]의 k번째 까지 HashMap에 put!
+		for (int rt = k - 1; rt < n; rt++) {
+			hm.put(arr[rt], hm.getOrDefault(arr[rt], 0) + 1); // arr[]의 k번째 까지 HashMap에 put!
 			answer.add(hm.size());
 
 			// 한 칸씩 옆으로 이동해주는 과정
-			hm.put(arr[lt], hm.get(arr[lt]) - 1); 
-			if (hm.get(arr[lt]) == 0) { 
+			hm.put(arr[lt], hm.get(arr[lt]) - 1);
+			if (hm.get(arr[lt]) == 0) {
 				// hm에서 arr[lt]의 vlaue 값이 0이면 삭제! -> 하지 않으면 다음번에 answer.add할 때 카운팅됨!
-				hm.remove(arr[lt]); 
+				hm.remove(arr[lt]);
 			}
 			lt++;
 		}
