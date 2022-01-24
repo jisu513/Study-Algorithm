@@ -18,11 +18,12 @@ public class S42 {// 아나그램(해쉬)
 			if (!hm.containsKey(x) || hm.get(x) == 0) {
 				//containsKey() : 특정 key 존재 여부를 확인할 때 사용!
 				// hm.get(x)== 0 : str에 있는 단어가 hm(s의 값들)에 없다는 의미이므로 No 출력!
-				answer = "NO";
+				return "NO";
 			}
 			hm.put(x, hm.get(x) - 1);
 			//s와 str의 문자가 일치하면 -1해줌! 
 		}
+
 		return answer;
 	}
 
