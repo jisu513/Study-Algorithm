@@ -5,11 +5,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
-public class S41 {// 학급회장(해쉬) 깃허브 연동오류 확인
+public class S41 {// 학급회장(해쉬)
 	public char solution(int n, String str) {
 		char answer = ' ';
 
 		HashMap<Character, Integer> hm = new HashMap<>();
+
 		for (char x : str.toCharArray()) {
 			hm.put(x, hm.getOrDefault(x, 0) + 1);
 			// hm.getOrDefault(x, 0)+1 : (x라는 값이 존재하면 x의 값을 넣어주고 없다면 0)을 한 후 +1
@@ -24,7 +25,6 @@ public class S41 {// 학급회장(해쉬) 깃허브 연동오류 확인
 				answer = key;
 			}
 		}
- 
 		return answer;
 	}
 
