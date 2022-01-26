@@ -12,7 +12,7 @@ public class S51 {//올바른 괄호
 			if(x == '(') {
 				st.push(x);
 			}else {
-				if(st.isEmpty()) { // ')'가 더 많은 경우
+				if(st.isEmpty()) { // '('이 있어야 ')'을 pop()하는데 stack이 비어있다는 것은 ')'가 더 많다는 의미!
 					return "NO";
 				}
 				st.pop();
