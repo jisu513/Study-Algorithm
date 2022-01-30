@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class BJ1316 {
+public class BJ9012 {
 
 	public static void main(String[] args) throws IOException {
 

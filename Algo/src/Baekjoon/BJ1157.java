@@ -3,7 +3,7 @@ package Baekjoon;
 import java.io.*;
 import java.util.*;
 
-public class BJ1157 {
+public class BJ1157 {//입력 받은 단어에서 가장 많이 사용된 알파벳 출력
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
