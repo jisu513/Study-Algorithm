@@ -12,21 +12,23 @@ public class S53 {// 인형 뽑기
 
 		Stack<Integer> sk = new Stack<>();
 
-		for (int pos : moves) {// moves의 배열값에 해당하는 board의 index로 이동!
-			for (int i = 0; i < board.length; i++) {// board의 행 길이! 열 길이는 board[0].length!
-				if (board[i][pos - 1] != 0) {// board의 index는 0부터 시작하므로 -1 해줘야함!
+		for (int pos : moves) {// moves의 값이 크레인의 위치!
+			for (int i = 0; i < board.length; i++) {// board.length는 행의 길이! board[0].length는 열의 길이
+				if (board[i][pos - 1] != 0) {// board의 index는 0부터 시작하므로 moves값(=pos)에서 -1 해줘야함!
+					// 인형 뽑기
 					int doll = board[i][pos - 1];
 					board[i][pos - 1] = 0;
-					if (!sk.isEmpty() && sk.peek() == doll) { //stack이 비어있지 않을 때 비교
-						//peek(): stack의 제일 상단에 있는 값만 확인!(pop()은 stack에서 꺼내서 리턴받음!)
-						answer += 2;
-						sk.pop();
-					} else {
-						sk.push(doll);
 
+					// 뽑은 인형이 스택 상단에 있는 인형과 같은 것일 경우
+					if (!sk.isEmpty() && sk.peek() == doll) { // peek(): 스택 상단에 있는 값 확인!(꺼내지 않음!)
+						answer += 2;
+						sk.pop(); // pop()은 스택 상단에 있는 값 확인 + 꺼냄!
+					} else { // 다른 경우에 스택에 push!
+						sk.push(doll);
 					}
-					break; //if가 참일 때 하나만 수행! break 안해주면 for문 계속 돌게 되므로 오답!
+					break; // 첫번째 if문이 참일 때 한 번 수행! break 안해주면 i-for문 계속 수행하게 되므로 오답!
 				}
+
 			}
 
 		}
