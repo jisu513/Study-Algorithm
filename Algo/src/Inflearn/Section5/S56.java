@@ -14,7 +14,7 @@ public class S56 {//공주 구하기
 		/*Queue(First In First Out) : 먼저 들어오 데이터가 먼저 나감! 
 		    offer(): Queue에 데이터를 집어 넣는 함수
 		    poll() : Queue에서 데이터를 빼내는 함수
-		    size() : Queue에 남은 데이터 갯수 알아내는 함수
+		    size() : Queue의 크기 구하는 함수
 		    contanins(*) : *값이 Queue에 있는지의 유무를 T/F로 리턴하는 함수 
 		 */
 		 	
