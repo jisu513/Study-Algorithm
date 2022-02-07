@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-class Person{// q삽입 순서(id)와 우선순위(priority)를 위한 person 클래스 생성
+class Person{// 배열 인덱스(id)와 우선순위(priority)를 위한 person 클래스 생성
 	int id;
 	int priority;
 	public Person(int id, int priority) {
@@ -22,23 +22,24 @@ public class S58 {// 응급실
 		
 		Queue<Person> q = new LinkedList<>();
 		
-		for(int i = 0; i<n; i++) {// q에 (id, priority) 데이터 삽입!
+		for(int i = 0; i<arr.length; i++) {//q에 배열 인덱스와 우선순위(id, priority) 삽입
 			q.offer(new Person(i, arr[i]));
 		}
 		while(!q.isEmpty()) {
-			Person check = q.poll();
+			Person tmp = q.poll();
 			for(Person x : q) {
-				if(x.priority > check.priority) {// check의 우선순위보다 q에 있는 다른값의 우선순위가 높으면
-					q.offer(check); // check를 다시 q에 삽입 
-					check = null; // check값 초기화
-					break;
+				if(x.priority > tmp.priority) {//우선순위의 숫자가 높은게 먼저임!
+					q.offer(tmp); // x의 우선순위가 더 높으므로 tmp를 q에 다시 삽입!
+					tmp = null; // tmp 초기화!	
+					break; //*** break 해줘야함!
 				}
 			}
-			if(check != null) {//check가 null이 아니라는 것은 check가 가장 우선으로 진료받는 경우
+			if(tmp != null) { //tmp의 우선순위가 x보다 높다는 의미!
 				answer++;
-				if(check.id == m) {// m이 몇번 째로 진료를 받는 것인 지 구하는 것이므로
+				if(tmp.id == m) {//m이 몇 번째로 진료 받는지 구해야함
 					return answer;
 				}
+				
 			}
 		}
 		
