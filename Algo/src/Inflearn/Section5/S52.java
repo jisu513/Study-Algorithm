@@ -10,20 +10,19 @@ public class S52 {// 괄호 문자 제거
 		String answer = "";
 
 		Stack<Character> st = new Stack<>();
-
 		for (char x : s.toCharArray()) {
 			if (x == ')') {
-				while (st.pop() != '('); // pop(): 가장 상단에 있는 원소를 꺼냄과 동시에 꺼낸 값을 return!
-		        // --> '('까지 pop하고 whlie문 탈출!			
+				while (st.pop() != '('); 
+				// pop() : 꺼내고 꺼낸 값 return! --> ** st.pop() == '(' 이면 '(' 꺼내고 while문 빠져나옴!  
 			} else {
 				st.push(x);
 			}
-
 		}
 
-		for (int i = 0; i < st.size(); i++) { // size(): stack의 크기
+		for (int i = 0; i < st.size(); i++) { // size(): 스택의 크기!
 			answer += st.get(i);
 		}
+
 		return answer;
 	}
 
