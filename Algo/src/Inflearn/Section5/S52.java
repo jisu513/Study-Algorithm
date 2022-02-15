@@ -14,12 +14,14 @@ public class S52 {// 괄호 문자 제거
 			if (x == ')') {
 				while (st.pop() != '('); 
 				// pop() : 꺼내고 꺼낸 값 return! --> ** st.pop() == '(' 이면 '(' 꺼내고 while문 빠져나옴!  
+
 			} else {
 				st.push(x);
 			}
 		}
 
-		for (int i = 0; i < st.size(); i++) { // size(): 스택의 크기!
+		for (int i = 0; i < st.size(); i++) {
+			                // size(): 스택의 크기!
 			answer += st.get(i);
 		}
 
