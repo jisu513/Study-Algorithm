@@ -12,20 +12,21 @@ public class S57 {// 교육과정 설계 - 필수과목 순서 중요!
 
 		Queue<Character> q = new LinkedList<>();
 		// 필수과목 q에 넣기
-		for(char x : s.toCharArray()) { 
+		for(char x : s.toCharArray()) {
 			q.offer(x);
 		}
 		for(int i = 0; i<str.length(); i++) {
 			if(q.contains(str.charAt(i))) {
-				if(q.poll() != str.charAt(i)) {
+				if(str.charAt(i) != q.poll()) {
 					// **poll()한 값과 같지 않다면 순서가 다르다는 의미이므로 No를 리턴!(s = "abc" str = "cba"이면 NO)
 					return "NO";
 				}
-			}
+							}
 		}
-		if(!q.isEmpty()) {  // q가 비어있지 않다면 str에 포함되지 못한 s가 있다는 의미이므로 No 리턴!
-			return " NO";
+		if(!q.isEmpty()) { // q가 비어있지 않다면 str에 포함되지 못한 s가 있다는 의미 --> No 리턴!
+			return "NO";
 		}
+		
 		
 		return answer;
 	}
