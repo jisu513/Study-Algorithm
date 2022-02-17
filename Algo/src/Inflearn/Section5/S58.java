@@ -23,24 +23,24 @@ public class S58 {// 응급실
 		int answer = 0;
 
 		Queue<Person> q = new LinkedList<>();
-
-		//q에 배열 인덱스와 우선순위(id, priority) 삽입
-		for (int i = 0; i < n; i++) {
+		// q에 id와 priority 삽입!
+		for (int i = 0; i < arr.length; i++) {
 			q.offer(new Person(i, arr[i]));
 		}
 
+		// arr은 우선순위 들어있는 배열!
 		while (!q.isEmpty()) {
 			Person tmp = q.poll();
 			for (Person x : q) {
-				if (x.priority > tmp.priority) { //우선순위의 숫자가 높은게 먼저임!
-					q.offer(tmp); // x의 우선순위가 더 높으므로 tmp를 q에 다시 삽입!
-					tmp = null; // tmp 초기화!
-					break; //*** break 해줘야함!
+				if (x.priority > tmp.priority) {
+					q.offer(tmp);
+					tmp = null;
+					break;
 				}
 			}
-			if (tmp != null) { //tmp의 우선순위가 x보다 높다는 의미!
+			if (tmp != null) {
 				answer++;
-				if (tmp.id == m) { //m이 몇 번째로 진료 받는지 구해야함
+				if (tmp.id == m) {
 					return answer;
 				}
 			}
