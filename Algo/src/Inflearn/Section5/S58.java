@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-//배열 인덱스(id)와 우선순위(priority)를 위한 person 클래스 생성
+//배열의 인덱스(id)와 우선순위(priority = 배열값)를 위한 person 클래스 생성
 class Person {
 	int id;
 	int priority;
@@ -26,7 +26,7 @@ public class S58 {// 응급실
 
 		// q에 id와 priority 삽입!
 		for (int i = 0; i < n; i++) {
-			q.offer(new Person(i, arr[i])); // arr은 우선순위 들어있는 배열!
+			q.offer(new Person(i, arr[i])); // arr[]은 우선순위가 들어있음!
 		}
 
 		while (!q.isEmpty()) {
@@ -38,9 +38,10 @@ public class S58 {// 응급실
 					break;
 				}
 			}
-			if (tmp != null) { // tmp가 우선순위 더 높은 경우
+			if (tmp != null) {  // tmp가 우선순위 더 높은 경우				
+				// 특정숫자 m이 몇 번째로 진료받는지 구하는 것!
 				answer++;
-				if (tmp.id == m) { // 특정숫자 m이 몇 번째로 진료받는지 구하는 것!
+				if (tmp.id == m) { 
 					return answer;
 				}
 			}
