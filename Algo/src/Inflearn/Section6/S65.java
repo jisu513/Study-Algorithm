@@ -11,7 +11,7 @@ public class S65 {
 	public char solution(int n, int[] arr) {
 		char answer = 'U';
 
-		// 1) 해시맵 사용
+		// 1) 해시맵
 		/* HashMap<Integer, Integer> hm = new HashMap<>();
 		for (int x : arr) {
 			hm.put(x, hm.getOrDefault(x, 0) + 1);
@@ -23,7 +23,7 @@ public class S65 {
 			}
 		}*/
 		
-		// 2)정렬 사용
+		// 2) 정렬
 		Arrays.sort(arr);
 		for(int i = 0; i<n-1; i++) {
 			if(arr[i] == arr[i+1]) {
