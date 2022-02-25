@@ -19,7 +19,7 @@ class Point implements Comparable<Point> { // **Comparable 인터페이스를 사용하면
 
 	@Override
 	public int compareTo(Point o) {
-		if (this.x == o.x) {// x좌표의 값이 같으면 y좌표값을 기준으로 정렬
+		if (this.x == o.x) { // x좌표의 값이 같으면 y좌표값을 기준으로 정렬
 			return this.y - o.y; // 오름차순 정렬! (내림차순으로 하려면 o.y - this.y) --> 결과값은 무조건 음수여야함
 		} else {
 			return this.x - o.x;
@@ -44,10 +44,11 @@ public class S67 {// 좌표정렬 (2차원 배열 정렬) - 오름차순
 			int y = Integer.parseInt(st.nextToken());
 
 			arr.add(new Point(x, y));
+
 		}
 
-		Collections.sort(arr); //compareTo로 정의해 놓은 것을 기준으로 정렬할 때 사용
-		
+		Collections.sort(arr);// compareTo로 정의해 놓은 것을 기준으로 정렬할 때 사용
+
 		for (Point o : arr) {
 			System.out.println(o.x + " " + o.y);
 		}

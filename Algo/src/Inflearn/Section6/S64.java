@@ -10,15 +10,16 @@ public class S64 {// Least Recently Used
 		int[] answer = new int[s];
 
 		for (int x : arr) {
-			int pos = -1; // pos는 hit 일 때 해당 answer[]의 index이므로 arr[] index에 해당하지 않는 -1 (0 ~ s-1 제외)로 설정!
+			int pos = -1; // pos는 hit 일 때 해당 answer[]의 index이므로 answer[] index에 해당하지 않는 -1 (0 ~ s-1가 아닌)로 설정!
 			
-			// hit인지 아닌지 확인 --> pos의 값이 변하지 않으면 miss / 변하면 hit
+			// (for문) hit인지 아닌지 확인 --> pos의 값이 변하지 않으면 (-1이면) miss / 변하면 hit
 			for (int i = 0; i < s; i++) {
-				if (x == answer[i]) { // hit일 때
+				if (answer[i] == x) { // hit일 때
 					pos = i; // 해당 index값을 pos 넣어줌
 				}
-			}
-			
+			} 
+
+			// answer[] 자리 옮기기
 			if (pos == -1) { // miss인 경우
 				for (int i = s - 1; i >= 1; i--) { // 맨 마지막 index에서 감소하면서 자리옮기기! (첫번째 index [0]는 새로운 input!)
 					answer[i] = answer[i - 1]; // ex) answer[3]에 answer[2] 값 들어옴 --> 한 칸 씩 옆으로 이동!
