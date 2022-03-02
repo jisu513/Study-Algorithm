@@ -21,10 +21,11 @@ public class BJ2230 {
 		for (int i = 0; i < n; i++) {
 			arr[i] = Integer.parseInt(br.readLine());
 		}
-		// Arrays.sort(arr);
+		
+		Arrays.sort(arr); //정렬해주기!
 
 		int lt = 0, rt = 0, len = 0, min = Integer.MAX_VALUE;
-		while (lt <= n) {
+		while (lt < n && rt < n) { // lt와 rt 둘 다 n 보다 작아야함
 			len = arr[rt] - arr[lt];
 			if (len >= m) {
 				if (len < min) {
@@ -33,8 +34,7 @@ public class BJ2230 {
 				lt++;
 			} else {
 				rt++;
-				if(rt >= n)
-					break;
+				
 			}
 
 		}
