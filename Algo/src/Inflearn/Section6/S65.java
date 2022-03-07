@@ -11,24 +11,22 @@ public class S65 {
 	public char solution(int n, int[] arr) {
 		char answer = 'U';
 
-		// 1) HashMap
-		/* HashMap<Integer, Integer> hm = new HashMap<>();
-		for (int x : arr) {
-			hm.put(x, hm.getOrDefault(x, 0) + 1);
+		// 정렬 사용
+		Arrays.sort(arr);
+		for (int i = 0; i < n - 1; i++) {
+			if (arr[i] == arr[i + 1]) {
+				return 'D';
+			}
 		}
 
+		// 해시맵 사용
+		HashMap<Integer, Integer> hm = new HashMap<>();
+		for(int x : arr) {
+			hm.put(x, hm.getOrDefault(x, 0)+1);
+		}
 		for(int x : hm.keySet()) {
-			if(hm.get(x) >= 2) {
+			if(x >= 2)
 				return 'D';
-			}
-		}*/
-		
-		// 2) Sorting
-		Arrays.sort(arr);
-		for(int i = 0; i<n-1; i++) {
-			if(arr[i] == arr[i+1]) {
-				return 'D';
-			}
 		}
 		return answer;
 	}
