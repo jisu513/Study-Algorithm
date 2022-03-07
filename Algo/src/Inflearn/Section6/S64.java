@@ -9,29 +9,25 @@ public class S64 {// Least Recently Used
 	public int[] solution(int s, int n, int[] arr) {
 		int[] answer = new int[s];
 
-		for (int x : arr) {
+		for(int x : arr) {
 			int pos = -1; // pos는 hit 일 때 해당 answer[]의 index이므로 answer[] index에 해당하지 않는 -1 (0 ~ s-1가 아닌)로 설정!
-			
-			// (for문) hit인지 아닌지 확인 --> pos의 값이 변하지 않으면 (-1이면) miss / 변하면 hit
-			for (int i = 0; i < s; i++) {
-				if (answer[i] == x) { // hit일 때
-					pos = i; // 해당 index값을 pos 넣어줌
-				}
-			} 
-
-			// answer[] 자리 옮기기
-			if (pos == -1) { // miss인 경우
-				for (int i = s - 1; i >= 1; i--) { // 맨 마지막 index에서 감소하면서 자리옮기기! (첫번째 index [0]는 새로운 input!)
-					answer[i] = answer[i - 1]; // ex) answer[3]에 answer[2] 값 들어옴 --> 한 칸 씩 옆으로 이동!
-					// answer[0] = x;
-				}
-			} else { // hit인 경우
-				for (int i = pos; i >= 1; i--) { // hit난 자리의 index(pos)부터 감소하면서 자리옮기기!
-					answer[i] = answer[i - 1];
-					// answer[0] = x;
+			for(int i = 0; i<s; i++) { // hit인지 여부 확인
+				if(x == arr[i]) { // hit일 때
+					pos = i; // pos를 hit이 일어난 인덱스로 변경
 				}
 			}
-			answer[0] = x; //miss일 때나 hit 일때나 새로운 input은 answer[0]에 들어와야 하므로 밖으로 빼도 됨!
+			
+			// answer[] 자리 옮기기
+			if(pos == -1) { // miss일 때 자리 한 칸 씩 뒤로 이동
+				for(int i = s-1; i>=1; i--) {
+					answer[i] = answer[i-1];
+				}
+			}else {//hit일 때 자리 이동(pos부터 변경)
+				for(int i = pos; i>=1; i--) {
+					answer[i] = answer[i-1];
+				}			
+			}
+			answer[0] = x; //miss일 때나 hit 일때나 새로운 input은 answer[0]에 들어와야 함!
 		}
 
 		return answer;
