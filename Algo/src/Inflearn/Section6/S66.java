@@ -15,23 +15,21 @@ public class S66 { // 장난꾸러기
 		 * 깊은 복사: 객체의 실제값을 새로운 객체로 복사 -> 메모리 측면에서 비효율적일 수 있음
 		 * 얕은 복사: 단순히 객체의 주소 값만을 복사 -> 같은 주소를 참조하기 때문에 하나의 값을 변경하면 다른 대상도 자동으로 변경됨 
 		 */
-
-		//tmp[] 만들어서 arr[] 그대로 복사!
-		int[] tmp = arr.clone(); // clone()메서드 사용해서 쉽게 복사할 수 있음! (깊은 복사)
 		
+		// arr 복사 후 복사한 배열을 정렬 --> 두 배열 비교 후 배열 값이 다른 인데스 출력
+		int[] tmp = arr.clone(); // clone()메서드 사용해서 쉽게 복사할 수 있음! (깊은 복사)
 		/*int[] tmp = new int[n]; 
 		for (int i = 0; i < n; i++) {
 			tmp[i] = arr[i];
 		}*/
 		
-		Arrays.sort(tmp); // 오름차순으로 정렬
-
-		for (int i = 0; i < n; i++) {
-			if (arr[i] != tmp[i]) {
-				answer.add(i + 1); // 학생 번호를 1번 부터 부여하므로 +1 해줘야힘!
-			}
+		Arrays.sort(tmp);
+		
+		for(int i = 0; i<n; i++) {
+			if(arr[i] != tmp[i])
+				answer.add(i+1); // 학생 번호를 1번 부터 부여하므로 +1 해줘야함!
 		}
-
+			
 		return answer;
 	}
 
