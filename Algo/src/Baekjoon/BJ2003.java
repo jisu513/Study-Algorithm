@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class BJ2003 { //Inflearn S34¿Í µ¿ÀÏ
+public class BJ2003 { //Inflearn S34
 
 	public static void main(String[] args) throws IOException {
 
