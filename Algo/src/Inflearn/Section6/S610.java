@@ -9,16 +9,15 @@ import java.util.StringTokenizer;
 public class S610 {// 마구간 정하기(결정 알고리즘)
 	public int count(int[] arr, int dist) {
 		int cnt = 1; // 배치한 말의 개수
-		int end_p = arr[0]; // 말이 배치된 좌표(처음에는 가장 왼쪽 좌표에 첫번째 말 배치 --> 말은 많이 배치할 수 있는 방법)
+		int ep = arr[0]; // 말이 배치된 좌표 (첫 말은 배열의 첫번째에 배치되는 것이 가장 좋음)
 
-		for (int i = 1; i < arr.length; i++) {
-			if (arr[i] - end_p >= dist) {// 말을 배치하려고 하는 좌표와 이미 말이 들어있는 좌표 사이의 거리가 dist(=mid) 보다 크거나 같아야함
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] - ep >= dist) { // 말을 배치하려고 하는 좌표와 이미 말이 들어있는 좌표 사이의 거리가 dist(=mid) 보다 크거나 같아야함
 				cnt++;
-				end_p = arr[i]; // 말이 배치된 좌표 업데이트ㄹ
+				ep = arr[i]; // 말이 배치된 좌표 업데이트
 			}
 		}
 		return cnt;
-
 	}
 
 	public int solution(int n, int c, int[] arr) {
@@ -29,7 +28,7 @@ public class S610 {// 마구간 정하기(결정 알고리즘)
 		int rt = arr[n - 1]; // 가장 마지막 좌표 값
 
 		while (lt <= rt) {
-			int mid = (lt + rt) / 2;
+			int mid = (lt + rt) / 2; // 두 말의 최대거리
 			if (count(arr, mid) >= c) {
 				answer = mid;
 				lt = mid + 1;
@@ -37,6 +36,7 @@ public class S610 {// 마구간 정하기(결정 알고리즘)
 				rt = mid - 1;
 			}
 		}
+
 		return answer;
 	}
 
