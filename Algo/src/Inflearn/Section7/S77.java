@@ -11,7 +11,7 @@ class NewNode{ // 패키지내 중복 클래스명 사용 X
 		lt = rt = null;
 	}
 }
-public class S77 { // 이진트리 순화 (넓이 우선 탐색)
+public class S77 { // 이진트리 순회 (넓이 우선 탐색)
 	NewNode root;
 
 	public void BFS(NewNode root) {
