@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class S76 {
+public class S76 {// 부분집합 구하기 (DFS)
 	static int n;
 	static int[] ch;
 
