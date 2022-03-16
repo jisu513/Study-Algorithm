@@ -10,7 +10,7 @@ class Node {
 	}
 }
 
-public class S75 { // 이진트리순회
+public class S75 { // 이진트리순회 (깊이 우선 탐색)
 	Node root;
 
 	public void DFS(Node root) {
