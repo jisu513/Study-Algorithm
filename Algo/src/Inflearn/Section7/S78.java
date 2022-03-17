@@ -21,7 +21,7 @@ public class S78 {// 송아지 찾기 (BFS)
 		int L = 0;
 		while (!Q.isEmpty()) {
 			int len = Q.size();
-			for (int i = 0; i < dist.length; i++) {
+			for (int i = 0; i < len; i++) {
 				int x = Q.poll(); // 현재 노드
 				for (int j = 0; j < dist.length; j++) {
 					int nx = x + dist[j]; // 자식 노드
