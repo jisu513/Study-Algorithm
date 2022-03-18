@@ -10,28 +10,29 @@ import java.util.StringTokenizer;
 public class S78 {// 송아지 찾기 (BFS)
 	int answer = 0;
 	int[] dist = { 1, -1, 5 };
-	int[] ch; // Q에 이미 있는 지 없는 지 확인! -> 중복된 값은 다시 넣지 않음
+	int[] ch;
 
 	Queue<Integer> Q = new LinkedList<>();
 
 	public int BFS(int s, int e) {
-		ch = new int[10001];
-		ch[s] = 1; // 출발 지점(현수의 위치)
+		ch = new int[10001]; // 좌표 점위 1~10000 까지
+		ch[s] = 1;
 		Q.offer(s);
-		int L = 0;
+		int L = 0; // Level
 		while (!Q.isEmpty()) {
 			int len = Q.size();
 			for (int i = 0; i < len; i++) {
-				int x = Q.poll(); // 현재 노드
+				int cur = Q.poll(); // 현재 노드
 				for (int j = 0; j < dist.length; j++) {
-					int nx = x + dist[j]; // 자식 노드
-					if(nx == e) { // 송아지를 찾았는지 확인!
-						return L+1; // nx는 자식노드이므로 현재노드 +1 해줘야함!
+					int ncur = cur + dist[j]; // 자식 노드
+					if (ncur == e) { // 송아지 찾았는지 확인!
+						return L + 1; // ncur은 자식노드 이고 현재 Level은 부모노드에 맞춰있기 때문에 +1 해줘야함!
 					}
-					if (nx >= 1 && nx <= 10000 && ch[nx] == 0) {
-						ch[nx] = 1;
-						Q.offer(nx);
+					if (cur >= 1 && cur <= 10000 && ch[ncur] == 0) { // 이미 Q에 들어 있는 값은 중복으로 삽입X
+						ch[ncur] = 1;
+						Q.offer(ncur);
 					}
+
 				}
 			}
 			L++;
