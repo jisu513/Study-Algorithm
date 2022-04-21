@@ -5,15 +5,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class S808 { // 수열 추측하기
+public class S808 { // 수열 추측하기 (순열 응용문제) -> S806 + S807
 	static int[] b; // 컴비네이션 값 저장!
 	static int[] p; // 순열 저장
 	static int[] check; // 중복 순열이 아니기 때문에 필요 (S806 - 순열구하기 )
 	static int n, f;
 	boolean flag = false;
-	int[][] dy = new int[35][35]; // 메모이제이션을 위해 필요!
+	int[][] dy = new int[12][12]; // 메모이제이션을 위해 필요! [12]는 문제에서 주어진 숫자
 
-	public int combi(int n, int r) {
+	public int combi(int n, int r) { // S807 (조합 nCr = n-1Cr-1 + n-1Cr)
+		//메모이제이션
 		if (dy[n][r] > 0)
 			return dy[n][r];
 		if (n == r || r == 0) {
@@ -27,19 +28,19 @@ public class S808 { // 수열 추측하기
 	public void DFS(int L, int sum) {
 		if (flag)
 			return;
-		if (L == n) {
+		if (L == n) { //**순열의 값을 구하는 것 -> 다양한 p[]의 값 중 정답인 p[]구하는 것!
 			if (sum == f) {
 				for (int x : p) {
 					System.out.print(x + " ");
 				}
-				flag = true;
+				flag = true; // 답을 찾은 후 다른 재귀들은 호출하자마자 끝낼 수 있게 하기 위한 장치
 			}
 
 		} else {
 			for (int i = 1; i <= n; i++) { // *i는 순열을 만드는 숫자!
 				if (check[i] == 0) {
-					check[i] = 1;
-					p[L] = i;
+					check[i] = 1; // 해당 숫자를 사용했을 때 표시 
+					p[L] = i; // 순열 값
 					DFS(L + 1, sum + (p[L] * b[L]));
 					check[i] = 0;
 				}
