@@ -17,9 +17,9 @@ public class S809 { // 조합 구하기
 			System.out.println();
 
 		} else {
-			for (int i = s; i <= n; i++) { // 조합 (외우는 것이 좋음! 응용 많기 때문)
+			for (int i = s; i <= n; i++) { // 조합 경우 (외우는 것이 좋음! 응용 많기 때문) (S807은 조합 경우의 수 구하는 것!)
 				combi[L] = i;
-				DFS(L + 1, i + 1);
+				DFS(L + 1, i + 1); // i는 s부터 시작해서 n까지 증가
 			}
 		}
 
@@ -37,7 +37,7 @@ public class S809 { // 조합 구하기
 
 		combi = new int[m];
 
-		S.DFS(0, 1);
+		S.DFS(0, 1); // DFS(Level, Start 숫자)
 
 	}
 
