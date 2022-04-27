@@ -24,8 +24,8 @@ public class S811 {// 미로탐색(BFS) 미로를 탈출하는 최단거리
        1 1 0 1 1 0 0
        1 0 0 0 0 0 0
     */
+	
 	static int[][] board, dis;
-
 	// 상하좌우로 이동하기 위한 방향배열 설정
 	static int[] dx = { -1, 0, 1, 0 };
 	static int[] dy = { 0, 1, 0, -1 };
@@ -33,12 +33,13 @@ public class S811 {// 미로탐색(BFS) 미로를 탈출하는 최단거리
 		Queue<Point> Q = new LinkedList<>();
 		Q.offer(new Point(x, y));
 		board[x][y] = 1; // 출발지점 체크(벽 만들기)
+		
 		while(!Q.isEmpty()) {
 			Point tmp = Q.poll();
+			
 			for(int i = 0; i < 4; i++) { // 방향배열
 				int nx = tmp.x + dx[i];
-				int ny = tmp.y + dy[i];
-				
+				int ny = tmp.y + dy[i];				
 				//경계선 안에 있는지 + 통로인지 확인
 				if(nx >= 1 && nx <= 7 && ny >= 1 && ny <= 7 && board[nx][ny] == 0) {
 					board[nx][ny] = 1; // 벽 만들기
@@ -60,9 +61,9 @@ public class S811 {// 미로탐색(BFS) 미로를 탈출하는 최단거리
 		board = new int[8][8]; // 1번 인덱스부터 사용!
 		dis = new int[8][8]; // 최소거리 구하기 위한 배열 ( dis[n][n]에 (1,1)에서 (n,n)까지의 거리 저장)
 
-		for (int i = 1; i <= 7; i++) {
+		for (int i = 1; i <= 7; i++) { // 인덱스 범위 1~7
 			st = new StringTokenizer(br.readLine());
-			for (int j = 1; j <= 7; j++) {
+			for (int j = 1; j <= 7; j++) { // 인덱스 범위 1~7
 				board[i][j] = Integer.parseInt(st.nextToken());
 			}
 		}
